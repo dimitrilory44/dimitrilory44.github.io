@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dimitri Lory · Développeur Full Stack Java</title>
+<meta name="description" content="Dimitri Lory, développeur Full Stack Java (Spring Boot, Angular, Vue.js) basé à Nantes. Plus de 5 ans d'expérience en applications métier et microservices.">
+<script>
+  document.documentElement.classList.add("is-loading");
+  setTimeout(function(){document.documentElement.classList.remove("is-loading")},3000);
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Sans:wght@400;600;700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="dev.css">
+</head>
+<body>
+<div class="skeleton" aria-hidden="true">
+  <div class="sk-nav"><div class="wrap"><span class="sk sk-logo"></span><span class="sk sk-line" style="width:8rem"></span><span class="sk sk-btn-s"></span></div></div>
+  <div class="wrap hero-grid sk-hero">
+    <div class="sk-col">
+      <span class="sk sk-pill"></span>
+      <span class="sk sk-title"></span>
+      <span class="sk sk-sub"></span>
+      <span class="sk sk-line"></span>
+      <span class="sk sk-line" style="width:85%"></span>
+      <span class="sk sk-line" style="width:60%"></span>
+      <div class="sk-row"><span class="sk sk-btn"></span><span class="sk sk-btn"></span></div>
+    </div>
+    <div class="sk-card">
+      <span class="sk sk-line" style="width:40%"></span>
+      <span class="sk sk-line"></span><span class="sk sk-line"></span><span class="sk sk-line"></span><span class="sk sk-line"></span>
+    </div>
+  </div>
+  <div class="wrap"><div class="sk-stats"><span class="sk"></span><span class="sk"></span><span class="sk"></span><span class="sk"></span></div></div>
+</div>
+
+<div id="classic">
+<nav class="nav" aria-label="Navigation principale">
+  <div class="wrap">
+    <a class="nav-brand" href="#top"><span class="mono">DL</span> Dimitri Lory</a>
+    <ul class="nav-links">
+      <li><a href="#atouts">Atouts</a></li>
+      <li><a href="#competences">Compétences</a></li>
+      <li><a href="#parcours">Parcours</a></li>
+      <li><a href="#projets">Projets</a></li>
+    </ul>
+    <button class="mode-switch" type="button" data-mode-switch="dev" aria-label="Passer en mode développeur">
+      <span class="ms-icon" aria-hidden="true">&lt;/&gt;</span><span class="ms-text">Mode dev</span><span class="ms-track" aria-hidden="true"><span></span></span>
+    </button>
+    <a class="btn btn-small btn-primary" href="#contact">Contact</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-decor" aria-hidden="true">
+    <div class="dots" data-speed="0.15"></div>
+    <span class="shape s1" data-speed="0.35"></span>
+    <span class="shape s2" data-speed="0.2"></span>
+    <span class="shape s3" data-speed="0.5"></span>
+  </div>
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <span class="pill"><span class="dot"></span>Disponible · Nantes (44)</span>
+      <h1>Dimitri Lory</h1>
+      <p class="role">Développeur Full Stack Java</p>
+      <p class="lead">Je conçois et fais évoluer des applications métier, en architecture microservices. <strong>Spring Boot</strong> côté serveur, <strong>Angular</strong> et <strong>Vue.js</strong> côté interface.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contact">Me contacter</a>
+        <a class="btn" href="#parcours">Voir mon parcours</a>
+      </div>
+    </div>
+
+    <aside class="profile-card" aria-label="Profil en bref" data-speed="-0.06">
+      <p class="card-label">Profil en bref</p>
+      <dl>
+        <div><dt>Poste recherché</dt><dd>Développeur Full Stack Java</dd></div>
+        <div><dt>Cible</dt><dd>Éditeurs de logiciel</dd></div>
+        <div><dt>Localisation</dt><dd>Nantes (44)</dd></div>
+        <div><dt>Langues</dt><dd>Français, anglais technique</dd></div>
+        <div><dt>Prochaine étape</dt><dd>Intégrer l'IA dans les applications métier</dd></div>
+      </dl>
+    </aside>
+  </div>
+
+  <div class="wrap">
+    <ul class="stats" aria-label="Chiffres clés">
+      <li><strong>5+ ans</strong><span>d'expérience en développement</span></li>
+      <li><strong>Java 8 → 21</strong><span>utilisé en entreprise</span></li>
+      <li><strong>10</strong><span>microservices sur une refonte</span></li>
+      <li><strong>95 %</strong><span>de couverture de tests en TDD</span></li>
+    </ul>
+  </div>
+</header>
+
+<section id="atouts">
+  <div class="wrap">
+    <p class="eyebrow">Pourquoi travailler avec moi</p>
+    <h2>Ce que j'apporte à un éditeur de logiciel</h2>
+    <div class="cards-3">
+      <article class="feature">
+        <span class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 13 9 5 9-5"/><path d="m3 17.5 9 5 9-5" opacity=".5"/></svg>
+        </span>
+        <h3>Faire évoluer l'existant</h3>
+        <p>J'ai participé à la refonte d'un outil de leasing en 10 microservices Java / Spring Boot.</p>
+      </article>
+      <article class="feature">
+        <span class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6l-8-3Z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>
+        </span>
+        <h3>Livrer un code fiable</h3>
+        <p>Tests unitaires et d'intégration sur chaque projet, jusqu'à 95 % de couverture en TDD chez Sopra Steria.</p>
+      </article>
+      <article class="feature">
+        <span class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/><path d="m8 10 2 2-2 2M13 14h3"/></svg>
+        </span>
+        <h3>Couvrir toute la chaîne</h3>
+        <p>De l'API sécurisée à l'écran utilisateur : backend Java d'un côté, front Angular ou Vue.js de l'autre.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="competences" class="tinted">
+  <div class="wrap">
+    <p class="eyebrow">Compétences</p>
+    <h2>Les technologies que j'utilise</h2>
+    <div class="skills">
+      <div class="skill-group">
+        <h3>Backend</h3>
+        <ul class="tags"><li>Java 8 → 21</li><li>Spring Boot</li><li>Spring Security</li><li>Micronaut</li><li>Groovy / Grails</li><li>JPA / Hibernate</li><li>API REST · JWT</li></ul>
+      </div>
+      <div class="skill-group">
+        <h3>Frontend</h3>
+        <ul class="tags"><li>Angular 2 → 21</li><li>Vue.js 2 / 3</li><li>TypeScript</li><li>Angular Material</li></ul>
+      </div>
+      <div class="skill-group">
+        <h3>Données &amp; outils</h3>
+        <ul class="tags"><li>PostgreSQL</li><li>MySQL</li><li>Docker</li><li>Maven / Gradle</li><li>Jenkins</li><li>ArgoCD</li><li>Git</li></ul>
+      </div>
+      <div class="skill-group">
+        <h3>Qualité &amp; méthodes</h3>
+        <ul class="tags"><li>JUnit · Mockito</li><li>Jest · Vitest</li><li>TDD</li><li>Scrum / Kanban</li><li>CI / CD</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="parcours">
+  <div class="wrap">
+    <p class="eyebrow">Parcours</p>
+    <h2>Expérience professionnelle</h2>
+    <ol class="timeline">
+      <li class="job">
+        <div class="when"><span>sept. 2025 – juil. 2026</span><span class="dur">11 mois</span></div>
+        <div class="what">
+          <h3>Développeur Java</h3>
+          <p class="company">Kereis · Groupe Hardis</p>
+          <ul>
+            <li>Nouvelles fonctionnalités en microservices Groovy / Micronaut.</li>
+            <li>Écrans associés en Angular 18, avec tests unitaires et d'intégration.</li>
+          </ul>
+          <ul class="tags tags-small"><li>Java 17/21</li><li>Micronaut</li><li>Angular 18</li><li>Docker</li></ul>
+        </div>
+      </li>
+      <li class="job">
+        <div class="when"><span>nov. 2024 – août 2025</span><span class="dur">10 mois</span></div>
+        <div class="what">
+          <h3>Développeur Java · projet entrepreneurial</h3>
+          <p class="company">Task Manager</p>
+          <ul>
+            <li>API REST de gestion de projets et de tâches, sécurisée par JWT avec gestion des rôles.</li>
+            <li>Architecture modulaire, documentation OpenAPI, tests unitaires et d'intégration.</li>
+          </ul>
+          <ul class="tags tags-small"><li>Java 21</li><li>Spring Boot 3.4</li><li>Spring Security</li><li>MySQL</li></ul>
+        </div>
+      </li>
+      <li class="job">
+        <div class="when"><span>mai 2023 – oct. 2024</span><span class="dur">1 an 6 mois</span></div>
+        <div class="what">
+          <h3>Développeur Java / Vue.js</h3>
+          <p class="company">Leasecom</p>
+          <ul>
+            <li>Modernisation d'un outil de leasing vers une architecture de 10 microservices.</li>
+            <li>Interface en Vue.js / Vuex, déploiement des API via ArgoCD (Kubernetes).</li>
+          </ul>
+          <ul class="tags tags-small"><li>Java 17</li><li>Spring Boot</li><li>Vue.js</li><li>ArgoCD</li></ul>
+        </div>
+      </li>
+      <li class="job">
+        <div class="when"><span>oct. 2021 – avr. 2023</span><span class="dur">1 an 7 mois</span></div>
+        <div class="what">
+          <h3>Développeur Full Stack Java</h3>
+          <p class="company">Groupe INTM (ESN) · Sopra Steria, EID Information</p>
+          <ul>
+            <li>Évolution d'une application de paiement par carte en Java / JEE, en lien avec le mainframe.</li>
+            <li>Développement full stack Spring Boot et Vue.js, en TDD avec 95 % de couverture.</li>
+          </ul>
+          <ul class="tags tags-small"><li>Java 8</li><li>Spring Boot</li><li>Vue.js</li><li>TypeScript</li></ul>
+        </div>
+      </li>
+      <li class="job job-compact">
+        <div class="when"><span>févr. – mai 2021</span><span class="dur">4 mois</span></div>
+        <div class="what">
+          <h3>Développeur / intégrateur Angular</h3>
+          <p class="company">Sopump · full remote</p>
+        </div>
+      </li>
+      <li class="job job-compact">
+        <div class="when"><span>juil. 2019 – janv. 2021</span><span class="dur">1 an 7 mois</span></div>
+        <div class="what">
+          <h3>Développeur Java / Jalios</h3>
+          <p class="company">Digiwin · Groupe TRSB</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="projets" class="tinted">
+  <div class="wrap">
+    <p class="eyebrow">Projets personnels</p>
+    <h2>Ce que je construis en dehors des missions</h2>
+    <div class="projects">
+      <article class="project">
+        <div class="mock mock-stream" aria-hidden="true">
+          <img src="img/work.png" width="500" height="200" alt="images projet streaming explorer"/>
+        </div>
+        <div class="project-body">
+          <span class="status status-wip">En cours</span>
+          <h3>Streaming Explorer</h3>
+          <p>Trouver un film ou une série selon les plateformes auxquelles on est abonné. Prochaine étape : une recherche en langage naturel par IA.</p>
+          <ul class="tags tags-small"><li>Angular 21</li><li>Signals</li><li>API TMDB</li><li>Spring Boot</li></ul>
+          <a class="link-arrow" href="https://github.com/dimitrilory44" target="_blank" rel="noopener">Voir sur GitHub</a>
+        </div>
+      </article>
+      <article class="project">
+        <div class="mock mock-kanban" aria-hidden="true">
+          <div class="mock-bar"><i></i><i></i><i></i></div>
+          <div class="mock-cols" data-rel="0.08">
+            <div><b></b><span></span><span></span><span></span></div>
+            <div><b></b><span></span><span></span></div>
+            <div><b></b><span></span></div>
+          </div>
+        </div>
+        <div class="project-body">
+          <span class="status status-wip">En cours</span>
+          <h3>Task Manager</h3>
+          <p>API de gestion de projets et de tâches : priorités, statuts, rôles admin / utilisateur, documentation Swagger.</p>
+          <ul class="tags tags-small"><li>Java 21</li><li>Spring Boot 3.4</li><li>JWT</li><li>MapStruct</li></ul>
+          <a class="link-arrow" href="https://github.com/dimitrilory44" target="_blank" rel="noopener">Voir sur GitHub</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="formation">
+  <div class="wrap">
+    <p class="eyebrow">Formation</p>
+    <h2>Diplômes et certifications</h2>
+    <ul class="edu">
+      <li><span class="year">2021</span><div><h3>Formation développeur web</h3><p>OpenClassrooms</p></div></li>
+      <li><span class="year">2019</span><div><h3>Certification Java / JEE</h3><p>M2i · Nantes</p></div></li>
+      <li><span class="year">2018</span><div><h3>Développeur informatique</h3><p>CESI</p></div></li>
+      <li><span class="year">2015</span><div><h3>Licence pro Outils informatiques pour le génie des procédés</h3><p>IUT Saint-Nazaire</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <p class="eyebrow eyebrow-light">Contact</p>
+      <h2>Un poste de développeur Java à pourvoir ?</h2>
+      <p class="contact-lead">Je réponds rapidement par e-mail ou par téléphone.</p>
+    </div>
+    <div class="contact-box">
+      <div class="contact-row">
+        <div><span class="contact-label">E-mail</span><code id="email">lorydim44@gmail.com</code></div>
+        <button class="copy-btn" id="copy-email" type="button">Copier</button>
+      </div>
+      <div class="contact-row">
+        <div><span class="contact-label">Téléphone</span><code>07 61 14 94 98</code></div>
+      </div>
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/dimitri-lory" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/dimitrilory44" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Dimitri LORY</span>
+    <span>Développeur Full Stack Java · Nantes</span>
+  </div>
+</footer>
+
+<button class="to-top" id="to-top" type="button" aria-label="Retour en haut de page">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+</div>
+
+<div id="dev" hidden>
+<div class="window">
+  <header class="titlebar">
+    <div class="lights" aria-hidden="true"><i></i><i></i><i></i></div>
+    <p class="titlebar-name">dimitri-lory <span>— DimitriApplication</span></p>
+    <div class="run" aria-hidden="true"><span class="run-dot"></span>Running :8080</div>
+    <button class="exit-dev" type="button" data-mode-switch="classic">Mode classique</button>
+  </header>
+
+  <!-- Démarrage -->
+  <section class="boot" aria-label="Démarrage">
+    <pre class="banner" aria-label="Dimitri"> ____ ___ __  __ ___ _____ ____  ___
+|  _ \_ _|  \/  |_ _|_   _|  _ \|_ _|
+| | | | || |\/| || |  | | | |_) || |
+| |_| | || |  | || |  | | |  _ &lt; | |
+|____/___|_|  |_|___| |_| |_| \_\___|</pre>
+    <p class="banner-sub">:: LORY Boot ::  <span class="hl">(v5.0.0-STABLE)</span></p>
+
+    <ol class="log" id="log">
+      <li><time>2019-07</time><b class="lvl info">INFO</b><span class="cls">d.l.DimitriApplication</span>Starting DimitriApplication · Java 8 · Nantes (44)</li>
+      <li><time>2019-07</time><b class="lvl info">INFO</b><span class="cls">d.l.career.Digiwin</span>Jalios / J2EE context initialized</li>
+      <li><time>2021-10</time><b class="lvl info">INFO</b><span class="cls">d.l.career.Intm</span>Mounted missions: [Sopra Steria, EID Information]</li>
+      <li><time>2021-10</time><b class="lvl info">INFO</b><span class="cls">d.l.quality.Tdd</span>Test coverage reached 95%</li>
+      <li><time>2023-05</time><b class="lvl info">INFO</b><span class="cls">d.l.career.Leasecom</span>Leasing tool modernized → 10 microservices</li>
+      <li><time>2024-11</time><b class="lvl warn">WARN</b><span class="cls">d.l.venture.TaskManager</span>Entrepreneurial side quest started</li>
+      <li><time>2025-09</time><b class="lvl info">INFO</b><span class="cls">d.l.career.Kereis</span>Micronaut microservices + Angular 18 loaded</li>
+      <li><time>2026-08</time><b class="lvl info">INFO</b><span class="cls">d.l.lab.StreamingExplorer</span>Angular 21 Signals enabled</li>
+      <li><time>2026-10</time><b class="lvl info">INFO</b><span class="cls">d.l.DimitriApplication</span>Started DimitriApplication in <span class="hl">5+ years</span> · ready to be hired</li>
+    </ol>
+    <button class="skip" id="skip" type="button" hidden>Passer l'animation</button>
+  </section>
+
+  <!-- API -->
+  <section class="api" id="api" aria-label="Profil sous forme d'API">
+    <div class="api-head">
+      <div>
+        <h1>Dimitri Lory <span class="ver">OAS 3.1</span></h1>
+        <p class="api-desc">Développeur <strong>Full Stack Java</strong> · Spring Boot · Angular · Vue.js. Cette page documente mon profil comme une API REST : déroulez un endpoint et cliquez sur <em>Try it out</em>.</p>
+      </div>
+      <div class="servers">
+        <span class="label">Servers</span>
+        <code>http://localhost:8080</code>
+      </div>
+    </div>
+
+    <div id="endpoints"></div>
+  </section>
+
+  <!-- Terminal -->
+  <section class="term" aria-label="Terminal interactif">
+    <div class="term-head">
+      <span>Terminal</span><span class="tab">zsh</span>
+      <span class="hint">Tapez <kbd>help</kbd> puis Entrée</span>
+    </div>
+    <div class="term-body" id="term-body">
+      <div id="term-out" aria-live="polite"></div>
+      <form id="term-form" class="prompt-line" autocomplete="off">
+        <label for="term-input" class="prompt"><span class="u">recruteur</span>@<span class="h">dimitri</span>:<span class="p">~</span>$</label>
+        <input id="term-input" type="text" spellcheck="false" autocapitalize="off" aria-label="Commande">
+      </form>
+      <div class="quick" aria-label="Commandes rapides">
+        <button type="button" data-cmd="whoami">whoami</button>
+        <button type="button" data-cmd="skills">skills</button>
+        <button type="button" data-cmd="projects">projects</button>
+        <button type="button" data-cmd="contact">contact</button>
+        <button type="button" data-cmd="sudo hire dimitri">sudo hire dimitri</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="status-bar">
+    <span><b class="ok">●</b> Process running</span>
+    <span>Java 21 · UTF-8 · LF</span>
+    <span id="clock">Nantes</span>
+  </footer>
+</div>
+</div>
+<div class="mode-flash" aria-hidden="true"></div>
+<script src="dev.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
