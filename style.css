@@ -252,8 +252,13 @@ h3 { font-family: var(--font-display); font-size: 1.2rem; letter-spacing: -0.01e
 .contact-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.07em; color: color-mix(in srgb, var(--contact-fg) 60%, transparent); }
 .contact-row code { font-family: var(--font-mono); font-size: 1rem; user-select: all; word-break: break-all; }
 .copy-btn { font: 600 0.86rem var(--font-body); background: #5cc6a6; color: #0c1a15; border: 0; border-radius: 8px; padding: 0.5rem 0.95rem; cursor: pointer; }
-.contact-links { display: flex; gap: 1.3rem; padding-top: 0.9rem; border-top: 1px solid rgba(255, 255, 255, 0.12); }
-.contact-links a { color: var(--contact-fg); font-weight: 600; }
+.contact-links { display: flex; flex-wrap: wrap; gap: 0.6rem 1.3rem; padding-top: 0.9rem; border-top: 1px solid rgba(255, 255, 255, 0.12); }
+.contact-links a { color: var(--contact-fg); font-weight: 600; display: inline-flex; align-items: center; gap: 0.45rem; }
+.contact-links svg, .call-btn svg { width: 1.05rem; height: 1.05rem; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.contact-links svg { color: #5cc6a6; }
+/* Bouton d'appel : uniquement sur les appareils tactiles (téléphones, tablettes) */
+.call-btn { display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; }
+@media (hover: hover) and (pointer: fine) { .call-btn { display: none; } }
 
 footer .wrap { padding-block: 1.8rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.8rem; font-size: 0.88rem; color: var(--muted); }
 
