@@ -57,7 +57,8 @@ const CONTACT = {
   phone: "07 61 14 94 98",
   linkedin: "https://www.linkedin.com/in/dimitri-lory",
   github: "https://github.com/dimitrilory44",
-  cv: "https://claude.ai/artifact/SKt58SxgVyPjniThEN8fY1",
+  cv: "cv/CV_Dimitri_Lory.pdf",
+  dossier: "cv/Dossier_competences_Dimitri_Lory.pdf",
 };
 
 // Définition des endpoints affichés façon Swagger
@@ -217,12 +218,14 @@ const COMMANDS = {
     [`linkedin  ${CONTACT.linkedin}`, "out"],
     [`github    ${CONTACT.github}`, "out"],
     [`cv        ${CONTACT.cv}`, "out"],
+    [`dossier   ${CONTACT.dossier}`, "out"],
   ],
   cv: () => {
     window.open(CONTACT.cv, "_blank", "noopener");
     return [
-      ["Ouverture de mon CV et de mon dossier de compétences…", "ok"],
+      ["Ouverture de mon CV…", "ok"],
       [`→ ${CONTACT.cv}`, "out"],
+      [`Dossier de compétences : ${CONTACT.dossier}`, "out"],
     ];
   },
   ls: () => [["profile.json  skills.json  experience.log  projects/  contact.vcf", "out"]],
