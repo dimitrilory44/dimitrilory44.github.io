@@ -284,6 +284,26 @@ function tick() {
   document.getElementById("clock").textContent = `Nantes ${t}`;
 }
 
+// Bouton retour en haut, version terminal : barre de progression ASCII
+const devTop = document.getElementById("dev-top");
+const devBar = devTop.querySelector(".dt-bar");
+const devPct = devTop.querySelector(".dt-pct");
+const BAR_WIDTH = 10;
+function updateDevTop() {
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = max > 0 ? Math.min(window.scrollY / max, 1) : 0;
+  const filled = Math.round(progress * BAR_WIDTH);
+  devBar.textContent = `[${"█".repeat(filled)}${"░".repeat(BAR_WIDTH - filled)}]`;
+  devPct.textContent = `${Math.round(progress * 100)}%`;
+  devTop.classList.toggle("visible", window.scrollY > 400);
+}
+window.addEventListener("scroll", updateDevTop, { passive: true });
+devTop.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+  document.querySelector("#dev .exit-dev")?.focus({ preventScroll: true });
+});
+updateDevTop();
+
 renderEndpoints();
 window.DevMode = { onEnter: playBootLog };
 print("Bienvenue ! Tapez « help » pour voir les commandes, ou cliquez sur un raccourci.", "acc");
