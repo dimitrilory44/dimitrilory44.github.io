@@ -22,6 +22,7 @@ const SKILLS = {
   tooling: ["Docker", "Maven", "Gradle", "GitLab CI", "ArgoCD", "Git"],
   testing: ["JUnit", "Mockito", "Jest", "Vitest", "TDD"],
   methods: ["Scrum", "Kanban", "CI / CD"],
+  ai: ["GitHub Copilot (agent)", "Claude Code (agent)"],
 };
 
 const EXPERIENCES = [
@@ -49,8 +50,10 @@ const EXPERIENCES = [
 ];
 
 const PROJECTS = [
-  { name: "streaming-explorer", status: "IN_PROGRESS", stack: ["Angular 21", "Signals", "Angular Material", "TMDB API", "Vitest"],
-    description: "Films et séries filtrés selon vos plateformes de streaming. Bientôt : backend Spring Boot et recherche en langage naturel par IA." },
+  { name: "streaming-explorer", status: "IN_PROGRESS", stack: ["Angular 21", "Signals", "Angular Material", "TMDB API", "Vitest", "Claude Code"],
+    description: "Films et séries filtrés selon vos plateformes de streaming : SPA Angular 21 « frontend only » branchée sur l'API TMDB. Architecture et choix techniques de ma main, Claude Code en appui (implémentation, tests, documentation). Bientôt : backend Spring Boot et recherche en langage naturel par IA." },
+  { name: "portfolio", status: "LIVE", stack: ["HTML", "CSS", "JavaScript", "Claude Code"],
+    description: "Ce site, mode dev compris : développé en pilotant Claude Code en agent. Je cadre et découpe le besoin, l'agent implémente, je relis et valide chaque changement." },
 ];
 
 const EDUCATION = [

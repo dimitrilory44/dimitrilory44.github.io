@@ -177,6 +177,7 @@ h3 { font-family: var(--font-display); font-size: 1.2rem; letter-spacing: -0.01e
 .lg-gitlab { color: #fc6d26; }
 .lg-argo { color: #ef7b4d; }
 .lg-git { color: #f05032; }
+.lg-claude { color: #d97757; }
 .lg-junit { color: #25a162; }
 .lg-vitest { color: #6e9f18; }
 @media (prefers-color-scheme: dark) {
