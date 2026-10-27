@@ -70,13 +70,14 @@ if (!reduceMotion) {
   renderParallax();
 }
 
-// Fin du chargement : on retire le squelette (au moins 500 ms d'affichage pour éviter un flash)
+// Fin du chargement : on retire le squelette dès que le HTML et les polices sont prêts, sans attendre les images
+// (au moins 500 ms d'affichage pour éviter un flash, au plus 1 s d'attente pour les polices)
 function endLoading() {
   const wait = Math.max(0, 500 - performance.now());
   setTimeout(() => document.documentElement.classList.remove("is-loading"), wait);
 }
-if (document.readyState === "complete") endLoading();
-else window.addEventListener("load", endLoading);
+const fontsReady = document.fonts ? document.fonts.ready : Promise.resolve();
+Promise.race([fontsReady, new Promise((r) => setTimeout(r, 1000))]).then(endLoading);
 
 // Apparition des blocs : seuls ceux situés sous l'écran au chargement sont masqués puis révélés
 const revealTargets = document.querySelectorAll(
