@@ -17,7 +17,7 @@ const PROFILE = {
 
 const SKILLS = {
   backend: ["Java 8 → 21", "Groovy", "Spring Boot", "Spring Security", "Micronaut", "Grails", "JPA / Hibernate", "REST", "JWT", "OpenAPI"],
-  frontend: ["Angular 2 → 21", "Vue.js 2 / 3", "TypeScript", "Angular Material"],
+  frontend: ["AngularJS", "Angular 8 → 21", "Vue.js 2 / 3", "TypeScript", "Angular Material"],
   data: ["PostgreSQL", "MySQL"],
   tooling: ["Docker", "Maven", "Gradle", "GitLab CI", "ArgoCD", "Git"],
   testing: ["JUnit", "Mockito", "Jest", "Vitest", "TDD"],
@@ -40,7 +40,7 @@ const EXPERIENCES = [
     highlights: ["Paiement par carte pour Euro-Information (Crédit Mutuel)", "Java / JEE + mainframe", "Appui technique au chef de projet"] },
   { from: "2021-10", to: "2022-04", company: "Sopra Steria · Groupe INTM", role: "Développeur Full Stack Java",
     sector: "Assurance Maladie", team: 5,
-    highlights: ["Spring Boot + Vue.js / TypeScript", "TDD : 95 % de couverture"] },
+    highlights: ["Spring Boot + Vue.js / TypeScript + AngularJS", "TDD : 95 % de couverture"] },
   { from: "2021-02", to: "2021-05", company: "Sopump", role: "Développeur front-end Angular",
     sector: "BTP", team: 3,
     highlights: ["Suivi du béton sur chantier : Angular 11, maquettes Figma, full remote"] },
