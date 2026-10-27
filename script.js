@@ -1,12 +1,14 @@
-// Copie de l'adresse e-mail
+// Copie de l'adresse e-mail (le résultat est aussi annoncé aux lecteurs d'écran via #copy-status)
 const copyBtn = document.getElementById("copy-email");
 const emailEl = document.getElementById("email");
+const copyStatus = document.getElementById("copy-status");
 
 copyBtn?.addEventListener("click", async () => {
   const email = emailEl.textContent.trim();
   try {
     await navigator.clipboard.writeText(email);
     copyBtn.textContent = "Copié";
+    copyStatus.textContent = "Adresse e-mail copiée";
   } catch {
     // Repli : sélectionne le texte pour une copie manuelle
     const range = document.createRange();
@@ -15,8 +17,12 @@ copyBtn?.addEventListener("click", async () => {
     sel.removeAllRanges();
     sel.addRange(range);
     copyBtn.textContent = "Sélectionné";
+    copyStatus.textContent = "Adresse e-mail sélectionnée, copiez-la avec Ctrl+C";
   }
-  setTimeout(() => (copyBtn.textContent = "Copier"), 2000);
+  setTimeout(() => {
+    copyBtn.textContent = "Copier";
+    copyStatus.textContent = "";
+  }, 2000);
 });
 
 // Lien de navigation actif selon la section visible
@@ -118,16 +124,17 @@ toTop.addEventListener("click", () => {
 });
 
 // Bascule entre la version classique et le mode développeur (#dev dans l'URL pour partager ce mode)
+// Chaque bascule crée une entrée d'historique : le bouton retour du navigateur revient au mode précédent
 const classicView = document.getElementById("classic");
 const devView = document.getElementById("dev");
-function setMode(mode, animate = true) {
+function setMode(mode, animate = true, push = true) {
   const apply = () => {
     const dev = mode === "dev";
     document.documentElement.dataset.mode = mode;
     classicView.hidden = dev;
     devView.hidden = !dev;
     window.scrollTo(0, 0);
-    try { history.replaceState(null, "", dev ? "#dev" : location.pathname + location.search); } catch (e) {}
+    if (push) try { history.pushState(null, "", dev ? "#dev" : location.pathname + location.search); } catch (e) {}
     if (dev && window.DevMode) window.DevMode.onEnter();
     const focusTarget = dev ? devView.querySelector(".exit-dev") : classicView.querySelector(".mode-switch");
     focusTarget?.focus({ preventScroll: true });
@@ -143,4 +150,10 @@ function setMode(mode, animate = true) {
 document.querySelectorAll("[data-mode-switch]").forEach((btn) =>
   btn.addEventListener("click", () => setMode(btn.dataset.modeSwitch))
 );
-if (location.hash === "#dev") setMode("dev", false);
+if (location.hash === "#dev") setMode("dev", false, false);
+
+// Retour / avance du navigateur, ou #dev ajouté à la main dans l'adresse
+window.addEventListener("hashchange", () => {
+  const mode = location.hash === "#dev" ? "dev" : "classic";
+  if ((document.documentElement.dataset.mode || "classic") !== mode) setMode(mode, true, false);
+});
