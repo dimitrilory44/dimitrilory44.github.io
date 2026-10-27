@@ -19,7 +19,7 @@ const SKILLS = {
   backend: ["Java 8 → 21", "Groovy", "Spring Boot", "Spring Security", "Micronaut", "Grails", "JPA / Hibernate", "REST", "JWT", "OpenAPI"],
   frontend: ["Angular 2 → 21", "Vue.js 2 / 3", "TypeScript", "Angular Material"],
   data: ["PostgreSQL", "MySQL"],
-  tooling: ["Docker", "Maven", "Gradle", "Jenkins", "ArgoCD", "Git"],
+  tooling: ["Docker", "Maven", "Gradle", "GitLab CI", "ArgoCD", "Git"],
   testing: ["JUnit", "Mockito", "Jest", "Vitest", "TDD"],
   methods: ["Scrum", "Kanban", "CI / CD"],
 };
