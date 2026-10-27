@@ -12,8 +12,8 @@ Un seul site, deux lectures : une version claire pour les recruteurs, et un **mo
 
 ## Deux modes, un seul site
 
-- **Version classique** : profil en bref, chiffres clés, compétences, frise du parcours, projets, formation et contact. Pensée pour être comprise en une minute.
-- **Mode développeur** : le portfolio démarre comme une application Spring Boot (bannière ASCII et logs de démarrage qui retracent le parcours), puis le profil se consulte comme une **API documentée façon Swagger** (`GET /api/v1/experiences`, `GET /actuator/health`, `POST /api/v1/hire`…). Un **terminal interactif** permet aussi de taper des commandes (`help`, `whoami`, `skills`…).
+- **Version classique** : profil en bref, chiffres clés, compétences, frise du parcours, projets, formation et contact, avec le CV et le dossier de compétences à télécharger. Pensée pour être comprise en une minute.
+- **Mode développeur** : le portfolio démarre comme une application Spring Boot (bannière ASCII et logs de démarrage qui retracent le parcours), puis le profil se consulte comme une **API documentée façon Swagger** (`GET /api/v1/profile`, `/skills`, `/experiences`, `/projects`, `/education`, `GET /actuator/health` et `POST /api/v1/hire`). Un **terminal interactif** permet aussi de taper des commandes (`help`, `whoami`, `skills`, `experience`, `projects`, `education`, `contact`, `cv`, `clear`… et une commande cachée).
 
 La bascule se fait par un interrupteur dans la navigation. L'ancre `#dev` permet de partager directement le mode développeur.
 
@@ -21,7 +21,7 @@ La bascule se fait par un interrupteur dans la navigation. L'ancre `#dev` permet
 
 **HTML, CSS et JavaScript, sans framework ni étape de build.**
 
-C'est un choix volontaire : le site est statique, sans état à gérer ni données à synchroniser, donc un framework comme Angular n'apporterait que du poids et une chaîne de build. Le site se résume à cinq fichiers et se déploie tel quel sur GitHub Pages.
+C'est un choix volontaire : le site est statique, sans état à gérer ni données à synchroniser, donc un framework comme Angular n'apporterait que du poids et une chaîne de build. Le code tient en cinq fichiers, et le dépôt se déploie tel quel sur GitHub Pages.
 
 La seule ressource externe est Google Fonts, avec des polices de repli système.
 
@@ -31,7 +31,10 @@ La seule ressource externe est Google Fonts, avec des polices de repli système.
 - **Squelette de chargement** affiché pendant le chargement de la page
 - **Apparition progressive des blocs** au défilement (`IntersectionObserver`), sans jamais masquer ce qui est déjà visible à l'ouverture
 - **Effet parallax** dans l'en-tête et sur les aperçus de projets (`requestAnimationFrame`)
-- **Bouton retour en haut** avec anneau de progression de lecture
+- **Bouton retour en haut** avec anneau de progression de lecture, et une version terminal en mode développeur (commande et barre de progression ASCII)
+- **CV et dossier de compétences** en PDF, hébergés sur le site : le CV dès l'en-tête, les deux documents dans la section contact et via la commande `cv` du terminal
+- **Contact adapté à l'appareil** : bouton *Copier* pour l'e-mail sur ordinateur, boutons *Écrire* (mailto) et *Appeler* sur mobile
+- **Démo en ligne** du projet Streaming Explorer, proposée sur ordinateur (un message la remplace sur mobile)
 - **Thème clair / sombre** automatique selon les préférences du système (variables CSS)
 - **Documentation d'API simulée** : réponses JSON colorées, commandes `curl`, bouton *Try it out*
 - **Terminal** avec historique (↑ / ↓) et autocomplétion (Tab)
@@ -53,6 +56,8 @@ script.js    Animations, bascule de mode, retour en haut
 dev.css      Styles du mode développeur, isolés sous #dev
 dev.js       API simulée, logs de démarrage et terminal
 img/         Images du site
+cv/          CV et dossier de compétences (PDF)
+docs/        Captures d'écran du README
 ```
 
 Les styles du mode développeur sont tous préfixés par `#dev`, pour que les deux versions cohabitent sans conflit.
