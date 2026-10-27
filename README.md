@@ -30,7 +30,7 @@ La seule ressource externe est Google Fonts, avec des polices de repli système.
 - **Bascule de mode** avec transition animée et lien partageable (`#dev`)
 - **Squelette de chargement** affiché pendant le chargement de la page
 - **Apparition progressive des blocs** au défilement (`IntersectionObserver`), sans jamais masquer ce qui est déjà visible à l'ouverture
-- **Effet parallax** dans l'en-tête et sur les aperçus de projets (`requestAnimationFrame`)
+- **Effet parallax** dans l'en-tête (`requestAnimationFrame`)
 - **Bouton retour en haut** avec anneau de progression de lecture, et une version terminal en mode développeur (commande et barre de progression ASCII)
 - **CV et dossier de compétences** en PDF, hébergés sur le site : le CV dès l'en-tête, les deux documents dans la section contact et via la commande `cv` du terminal
 - **Contact adapté à l'appareil** : bouton *Copier* pour l'e-mail sur ordinateur, boutons *Écrire* (mailto) et *Appeler* sur mobile

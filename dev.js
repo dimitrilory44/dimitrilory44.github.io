@@ -10,6 +10,7 @@ const PROFILE = {
   architecture: "microservices",
   languages: { fr: "natif", en: "technique" },
   openToWork: true,
+  availability: { from: "immédiatement", contract: "CDI", workMode: "hybride", area: "Nantes et alentours" },
   target: "éditeurs de logiciel",
   nextStep: "intégrer l'IA dans les applications métier",
 };
@@ -24,25 +25,32 @@ const SKILLS = {
 };
 
 const EXPERIENCES = [
-  { from: "2025-09", to: "2026-07", company: "Kereis · Groupe Hardis", role: "Développeur Java",
-    highlights: ["Microservices Groovy / Micronaut", "Écrans Angular 18", "Tests unitaires et d'intégration"] },
+  { from: "2025-09", to: "2026-07", company: "Kereis · Groupe Hardis", role: "Développeur Full Stack Java",
+    sector: "assurance", team: 10,
+    highlights: ["Gestion des adhésions : microservices Groovy / Micronaut + écrans Angular 18", "Tests, revues de code, déploiement GitLab CI", "Run : incidents de production, extractions datalake AWS"] },
   { from: "2024-11", to: "2025-08", company: "Task Manager (projet entrepreneurial)", role: "Développeur Java",
-    highlights: ["API REST sécurisée JWT + rôles", "Architecture modulaire par domaine", "OpenAPI, JUnit, Mockito"] },
-  { from: "2023-05", to: "2024-10", company: "Leasecom", role: "Développeur Java / Vue.js",
-    highlights: ["Modernisation vers 10 microservices Java 17", "Front Vue.js / Vuex", "Déploiement ArgoCD (Kubernetes)"] },
-  { from: "2021-10", to: "2023-04", company: "Groupe INTM (ESN)", role: "Développeur Full Stack Java",
-    highlights: ["EID Information : paiement par carte, Java / JEE + mainframe", "Sopra Steria : Spring Boot + Vue.js, TDD 95 %"] },
-  { from: "2021-02", to: "2021-05", company: "Sopump", role: "Développeur / intégrateur",
-    highlights: ["Angular 11, maquettes Figma, full remote"] },
+    sector: "API REST", team: null,
+    highlights: ["API REST sécurisée JWT + rôles", "Architecture modulaire par domaine, MapStruct", "OpenAPI, JUnit, Mockito"] },
+  { from: "2023-05", to: "2024-10", company: "Leasecom", role: "Développeur Full Stack Java",
+    sector: "leasing", team: 5,
+    highlights: ["Refonte vers 10 microservices Java 17 / Spring Boot + Vue.js", "Pair programming avec l'architecte, initiation Kafka", "ArgoCD / Kubernetes, war rooms, accueil des nouveaux"] },
+  { from: "2022-05", to: "2023-04", company: "EID Information · Groupe INTM", role: "Développeur Java / JEE",
+    sector: "banque · monétique", team: 2,
+    highlights: ["Paiement par carte pour Euro-Information (Crédit Mutuel)", "Java / JEE + mainframe", "Appui technique au chef de projet"] },
+  { from: "2021-10", to: "2022-04", company: "Sopra Steria · Groupe INTM", role: "Développeur Full Stack Java",
+    sector: "Assurance Maladie", team: 5,
+    highlights: ["Spring Boot + Vue.js / TypeScript", "TDD : 95 % de couverture"] },
+  { from: "2021-02", to: "2021-05", company: "Sopump", role: "Développeur front-end Angular",
+    sector: "BTP", team: 3,
+    highlights: ["Suivi du béton sur chantier : Angular 11, maquettes Figma, full remote"] },
   { from: "2019-07", to: "2021-01", company: "Digiwin · Groupe TRSB", role: "Développeur Java / Jalios",
-    highlights: ["Plateforme Jalios / J2EE", "Maintenance évolutive et corrective"] },
+    sector: "collectivités", team: 10,
+    highlights: ["Intranets sur la plateforme Jalios / J2EE", "Maintenance évolutive et corrective"] },
 ];
 
 const PROJECTS = [
-  { name: "streaming-explorer", status: "IN_PROGRESS", stack: ["Angular 21", "Signals", "TMDB API", "Spring Boot"],
-    description: "Films et séries filtrés selon vos plateformes de streaming. Bientôt : recherche en langage naturel par IA." },
-  { name: "task-manager", status: "IN_PROGRESS", stack: ["Java 21", "Spring Boot 3.4", "Spring Security", "MapStruct"],
-    description: "API de gestion de projets et de tâches : priorités, statuts, rôles, documentation Swagger." },
+  { name: "streaming-explorer", status: "IN_PROGRESS", stack: ["Angular 21", "Signals", "Angular Material", "TMDB API", "Vitest"],
+    description: "Films et séries filtrés selon vos plateformes de streaming. Bientôt : backend Spring Boot et recherche en langage naturel par IA." },
 ];
 
 const EDUCATION = [
@@ -65,7 +73,7 @@ const CONTACT = {
 const GROUPS = [
   { tag: "profile-controller", desc: "Qui je suis", ops: [
     { method: "get", path: "/api/v1/profile", summary: "Profil en bref", open: true, body: PROFILE },
-    { method: "get", path: "/actuator/health", summary: "Disponibilité", body: { status: "UP", components: { availability: { status: "UP", details: { since: "2026-07", mobility: "Nantes (44)" } }, motivation: { status: "UP" }, coffee: { status: "UP", level: 0.82 } } } },
+    { method: "get", path: "/actuator/health", summary: "Disponibilité", body: { status: "UP", components: { availability: { status: "UP", details: { from: "immédiatement", contract: "CDI", workMode: "hybride", mobility: "Nantes et alentours" } }, motivation: { status: "UP" }, coffee: { status: "UP", level: 0.82 } } } },
   ]},
   { tag: "career-controller", desc: "Parcours et compétences", ops: [
     { method: "get", path: "/api/v1/experiences", summary: "Expériences professionnelles", open: true, body: EXPERIENCES },
@@ -207,6 +215,7 @@ const COMMANDS = {
     [`${PROFILE.name} — ${PROFILE.title}`, "ok"],
     [`${PROFILE.experienceYears} ans d'expérience · ${PROFILE.stack.join(" · ")} · ${PROFILE.location}`, "out"],
     [`Cible : ${PROFILE.target}. Prochaine étape : ${PROFILE.nextStep}.`, "out"],
+    [`Disponible ${PROFILE.availability.from} · ${PROFILE.availability.contract} · ${PROFILE.availability.workMode} · ${PROFILE.availability.area}`, "ok"],
   ],
   skills: () => Object.entries(SKILLS).map(([k, v]) => [`${k.padEnd(9)} ${v.join(", ")}`, "out"]),
   experience: () => EXPERIENCES.map((x) => [`${x.from} → ${x.to}  ${x.role} @ ${x.company}`, "out"]),

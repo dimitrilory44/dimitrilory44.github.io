@@ -35,6 +35,23 @@
 </head>
 
 <body>
+  <!-- Icônes réutilisées dans les pastilles du parcours (secteur, équipe, type de mission) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6l-8-3Z"/></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="5" rx="2"/><path d="M2 10h20M6 15h4"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6M15.5 7.5l3 3L22 7l-3-3"/></symbol>
+    <symbol id="i-health" viewBox="0 0 24 24"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.8 0-3 .5-4.5 2-1.5-1.5-2.7-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7Z"/><path d="M3.2 12h6.3l.5-1 2 4.5 2-7 1.5 3.5h5.3"/></symbol>
+    <symbol id="i-hardhat" viewBox="0 0 24 24"><path d="M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v2Z"/><path d="M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5M4 15v-3a6 6 0 0 1 6-6M14 6a6 6 0 0 1 6 6v3"/></symbol>
+    <symbol id="i-landmark" viewBox="0 0 24 24"><path d="M3 22h18M6 18v-7M10 18v-7M14 18v-7M18 18v-7M12 2l8 5H4Z"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 13 9 5 9-5"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-laptop" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M2 20h20"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2.1-.1-2.9a2.2 2.2 0 0 0-2.9-.1Z"/><path d="m12 15-3-3a22 22 0 0 1 2-4A12.9 12.9 0 0 1 22 2c0 2.7-.8 7.5-6 11a22.4 22.4 0 0 1-4 2Z"/><path d="M9 12H4s.6-3 2-4c1.6-1.1 5 0 5 0M12 15v5s3-.6 4-2c1.1-1.6 0-5 0-5"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></symbol>
+  </svg>
   <div class="skeleton" aria-hidden="true">
     <div class="sk-nav">
       <div class="wrap"><span class="sk sk-logo"></span><span class="sk sk-line" style="width:8rem"></span><span
@@ -89,7 +106,7 @@
       </div>
       <div class="wrap hero-grid">
         <div class="hero-text">
-          <span class="pill"><span class="dot"></span>Disponible · Nantes (44)</span>
+          <span class="pill"><span class="dot"></span>Disponible immédiatement · Nantes (44)</span>
           <h1>Dimitri Lory</h1>
           <p class="role">Développeur Full Stack Java</p>
           <p class="lead">Je conçois et fais évoluer des applications métier, en architecture microservices.
@@ -114,8 +131,12 @@
               <dd>Éditeurs de logiciel</dd>
             </div>
             <div>
+              <dt>Disponibilité</dt>
+              <dd>Immédiate · CDI</dd>
+            </div>
+            <div>
               <dt>Localisation</dt>
-              <dd>Nantes (44)</dd>
+              <dd>Nantes et alentours · hybride</dd>
             </div>
             <div>
               <dt>Langues</dt>
@@ -242,28 +263,43 @@
           <li class="job">
             <div class="when"><span>sept. 2025 – juil. 2026</span><span class="dur">11 mois</span></div>
             <div class="what">
-              <h3>Développeur Java</h3>
+              <h3>Développeur Full Stack Java</h3>
               <p class="company">Kereis · Groupe Hardis</p>
+              <ul class="job-meta" aria-label="Contexte de la mission">
+                <li class="m-sector"><svg aria-hidden="true"><use href="#i-shield"/></svg>Assurance</li>
+                <li><svg aria-hidden="true"><use href="#i-users"/></svg>Équipe de 10</li>
+                <li><svg aria-hidden="true"><use href="#i-layers"/></svg>Build et run</li>
+              </ul>
               <ul>
-                <li>Nouvelles fonctionnalités en microservices Groovy / Micronaut.</li>
-                <li>Écrans associés en Angular 18, avec tests unitaires et d'intégration.</li>
+                <li>Outil de gestion des adhésions d'une compagnie d'assurance : conception de nouvelles fonctionnalités,
+                  du microservice Groovy / Micronaut jusqu'à l'écran Angular 18.</li>
+                <li>Tests unitaires et d'intégration, revues de code et déploiement sur le cloud via GitLab CI.</li>
+                <li>Run : suivi des incidents de production et requêtes d'extraction sur un datalake AWS.</li>
               </ul>
               <ul class="tags tags-small">
                 <li>Java 17/21</li>
                 <li>Micronaut</li>
                 <li>Angular 18</li>
-                <li>Docker</li>
+                <li>GitLab CI</li>
+                <li>AWS</li>
               </ul>
             </div>
           </li>
           <li class="job">
             <div class="when"><span>nov. 2024 – août 2025</span><span class="dur">10 mois</span></div>
             <div class="what">
-              <h3>Développeur Java · projet entrepreneurial</h3>
+              <h3>Développeur Java</h3>
               <p class="company">Task Manager</p>
+              <ul class="job-meta" aria-label="Contexte de la mission">
+                <li class="m-sector"><svg aria-hidden="true"><use href="#i-rocket"/></svg>Projet entrepreneurial</li>
+                <li><svg aria-hidden="true"><use href="#i-code"/></svg>API REST</li>
+              </ul>
               <ul>
-                <li>API REST de gestion de projets et de tâches, sécurisée par JWT avec gestion des rôles.</li>
-                <li>Architecture modulaire, documentation OpenAPI, tests unitaires et d'intégration.</li>
+                <li>Conception d'une API de gestion de projets et de tâches (priorités, statuts, pagination), sécurisée
+                  par JWT et Spring Security avec des rôles admin / utilisateur.</li>
+                <li>Architecture modulaire par domaine, DTO en records mappés avec MapStruct, gestion centralisée des
+                  erreurs et documentation OpenAPI.</li>
+                <li>Tests unitaires et d'intégration avec JUnit et Mockito.</li>
               </ul>
               <ul class="tags tags-small">
                 <li>Java 21</li>
@@ -271,47 +307,96 @@
                 <li>Spring Security</li>
                 <li>MySQL</li>
               </ul>
+              <a class="link-arrow" href="https://github.com/dimitrilory44/taskManager" target="_blank"
+                rel="noopener">Voir le code sur GitHub</a>
             </div>
           </li>
           <li class="job">
             <div class="when"><span>mai 2023 – oct. 2024</span><span class="dur">1 an 6 mois</span></div>
             <div class="what">
-              <h3>Développeur Java / Vue.js</h3>
+              <h3>Développeur Full Stack Java</h3>
               <p class="company">Leasecom</p>
+              <ul class="job-meta" aria-label="Contexte de la mission">
+                <li class="m-sector"><svg aria-hidden="true"><use href="#i-key"/></svg>Leasing</li>
+                <li><svg aria-hidden="true"><use href="#i-users"/></svg>Équipe de 5</li>
+                <li><svg aria-hidden="true"><use href="#i-building"/></svg>DSI</li>
+                <li><svg aria-hidden="true"><use href="#i-layers"/></svg>10 microservices</li>
+              </ul>
               <ul>
-                <li>Modernisation d'un outil de leasing vers une architecture de 10 microservices.</li>
-                <li>Interface en Vue.js / Vuex, déploiement des API via ArgoCD (Kubernetes).</li>
+                <li>Refonte d'un outil interne de location d'équipements vers une architecture de 10 microservices
+                  Java 17 / Spring Boot, avec une interface Vue.js / Vuex.</li>
+                <li>Optimisation du code en pair programming avec l'architecte technique, et première mise en œuvre de
+                  Kafka pour les échanges entre microservices.</li>
+                <li>Déploiement des API sur Kubernetes via ArgoCD, gestion des incidents de production (war rooms) et
+                  accompagnement des nouveaux arrivants.</li>
               </ul>
               <ul class="tags tags-small">
                 <li>Java 17</li>
                 <li>Spring Boot</li>
                 <li>Vue.js</li>
-                <li>ArgoCD</li>
+                <li>Kafka</li>
+                <li>ArgoCD · Kubernetes</li>
               </ul>
             </div>
           </li>
           <li class="job">
-            <div class="when"><span>oct. 2021 – avr. 2023</span><span class="dur">1 an 7 mois</span></div>
+            <div class="when"><span>mai 2022 – avr. 2023</span><span class="dur">1 an</span></div>
+            <div class="what">
+              <h3>Développeur Java / JEE</h3>
+              <p class="company">EID Information · Groupe INTM (ESN)</p>
+              <ul class="job-meta" aria-label="Contexte de la mission">
+                <li class="m-sector"><svg aria-hidden="true"><use href="#i-card"/></svg>Banque · monétique</li>
+                <li><svg aria-hidden="true"><use href="#i-users"/></svg>Équipe de 2</li>
+                <li><svg aria-hidden="true"><use href="#i-briefcase"/></svg>Client Euro-Information</li>
+              </ul>
+              <ul>
+                <li>Évolution d'une application n-tiers de gestion des paiements par carte bancaire pour Euro-Information,
+                  filiale technologique du Crédit Mutuel, avec récupération des données sur le mainframe.</li>
+                <li>Analyse et correction des anomalies, tests des évolutions et appui technique au chef de projet.</li>
+              </ul>
+              <ul class="tags tags-small">
+                <li>Java 8</li>
+                <li>Java EE</li>
+                <li>Mainframe</li>
+                <li>Oracle</li>
+              </ul>
+            </div>
+          </li>
+          <li class="job">
+            <div class="when"><span>oct. 2021 – avr. 2022</span><span class="dur">7 mois</span></div>
             <div class="what">
               <h3>Développeur Full Stack Java</h3>
-              <p class="company">Groupe INTM (ESN) · Sopra Steria, EID Information</p>
+              <p class="company">Sopra Steria · Groupe INTM (ESN)</p>
+              <ul class="job-meta" aria-label="Contexte de la mission">
+                <li class="m-sector"><svg aria-hidden="true"><use href="#i-health"/></svg>Assurance Maladie</li>
+                <li><svg aria-hidden="true"><use href="#i-users"/></svg>Équipe de 5</li>
+                <li><svg aria-hidden="true"><use href="#i-check"/></svg>TDD · 95 %</li>
+              </ul>
               <ul>
-                <li>Évolution d'une application de paiement par carte en Java / JEE, en lien avec le mainframe.</li>
-                <li>Développement full stack Spring Boot et Vue.js, en TDD avec 95 % de couverture.</li>
+                <li>Application web de saisie et de gestion des adhérents de l'Assurance Maladie : fonctionnalités backend
+                  en Java 8 / Spring Boot et écrans en Vue.js / TypeScript.</li>
+                <li>Démarche TDD avec 95 % de couverture en tests unitaires, puis validation et corrections en recette.</li>
               </ul>
               <ul class="tags tags-small">
                 <li>Java 8</li>
                 <li>Spring Boot</li>
                 <li>Vue.js</li>
-                <li>TypeScript</li>
+                <li>TDD</li>
               </ul>
             </div>
           </li>
           <li class="job job-compact">
             <div class="when"><span>févr. – mai 2021</span><span class="dur">4 mois</span></div>
             <div class="what">
-              <h3>Développeur / intégrateur Angular</h3>
-              <p class="company">Sopump · full remote</p>
+              <h3>Développeur front-end Angular</h3>
+              <p class="company">Sopump</p>
+              <ul class="job-meta" aria-label="Contexte de la mission">
+                <li class="m-sector"><svg aria-hidden="true"><use href="#i-hardhat"/></svg>BTP</li>
+                <li><svg aria-hidden="true"><use href="#i-users"/></svg>Équipe de 3</li>
+                <li><svg aria-hidden="true"><use href="#i-laptop"/></svg>Full remote</li>
+              </ul>
+              <p class="job-ctx">Outil de suivi du béton sur les chantiers : conception fonctionnelle, maquettes Figma et
+                interface en Angular 11 / Angular Material.</p>
             </div>
           </li>
           <li class="job job-compact">
@@ -319,6 +404,13 @@
             <div class="what">
               <h3>Développeur Java / Jalios</h3>
               <p class="company">Digiwin · Groupe TRSB</p>
+              <ul class="job-meta" aria-label="Contexte de la mission">
+                <li class="m-sector"><svg aria-hidden="true"><use href="#i-landmark"/></svg>Collectivités</li>
+                <li><svg aria-hidden="true"><use href="#i-users"/></svg>Équipe de 10</li>
+                <li><svg aria-hidden="true"><use href="#i-layers"/></svg>Centre de services</li>
+              </ul>
+              <p class="job-ctx">Intranets pour les collectivités sur la plateforme Jalios / J2EE : nouvelles
+                fonctionnalités, front JavaScript et maintenance évolutive et corrective.</p>
             </div>
           </li>
         </ol>
@@ -330,20 +422,27 @@
         <p class="eyebrow">Projets personnels</p>
         <h2>Ce que je construis en dehors des missions</h2>
         <div class="projects">
-          <article class="project">
+          <article class="project project-wide">
             <div class="mock mock-stream" aria-hidden="true">
               <img src="img/work.jpg" width="1200" height="597" loading="lazy" decoding="async" alt="Capture de Streaming Explorer : catalogue de séries filtré par service de streaming" />
             </div>
             <div class="project-body">
               <span class="status status-wip">En cours</span>
               <h3>Streaming Explorer</h3>
-              <p>Trouver un film ou une série selon les plateformes auxquelles on est abonné. Prochaine étape : une
-                recherche en langage naturel par IA.</p>
+              <p>Trouver un film ou une série selon les plateformes auxquelles on est abonné.</p>
+              <ul class="project-points">
+                <li>Intégration de l'API TMDB et des fournisseurs de streaming (Netflix, Prime Video, Disney+…).</li>
+                <li>Angular moderne : Signals, httpResource, formulaires réactifs et Angular Material.</li>
+                <li>Filtres, tris par type de média, recherche et scroll infini, préférences mémorisées.</li>
+                <li>À venir : backend Spring Boot (proxy et cache) et recherche en langage naturel par IA.</li>
+              </ul>
               <ul class="tags tags-small">
                 <li>Angular 21</li>
                 <li>Signals</li>
+                <li>TypeScript</li>
+                <li>Angular Material</li>
                 <li>API TMDB</li>
-                <li>Spring Boot</li>
+                <li>Vitest</li>
               </ul>
               <div class="project-links">
                 <a class="link-arrow demo-desktop" href="https://claude.ai/artifact/Q8K9Exgwpmx15pAPsj4jSf" target="_blank" rel="noopener" title="Démo hébergée sur claude.ai, avec des données d'exemple">Tester la démo</a>
@@ -353,31 +452,9 @@
               <p class="demo-mobile-note">Démo interactive disponible sur ordinateur.</p>
             </div>
           </article>
-          <article class="project">
-            <div class="mock mock-kanban" aria-hidden="true">
-              <div class="mock-bar"><i></i><i></i><i></i></div>
-              <div class="mock-cols" data-rel="0.08">
-                <div><b></b><span></span><span></span><span></span></div>
-                <div><b></b><span></span><span></span></div>
-                <div><b></b><span></span></div>
-              </div>
-            </div>
-            <div class="project-body">
-              <span class="status status-wip">En cours</span>
-              <h3>Task Manager</h3>
-              <p>API de gestion de projets et de tâches : priorités, statuts, rôles admin / utilisateur, documentation
-                Swagger.</p>
-              <ul class="tags tags-small">
-                <li>Java 21</li>
-                <li>Spring Boot 3.4</li>
-                <li>JWT</li>
-                <li>MapStruct</li>
-              </ul>
-              <a class="link-arrow" href="https://github.com/dimitrilory44/taskManager" target="_blank"
-                rel="noopener">Voir sur GitHub</a>
-            </div>
-          </article>
         </div>
+        <p class="projects-more"><a class="link-arrow" href="https://github.com/dimitrilory44?tab=repositories"
+            target="_blank" rel="noopener">Voir mes autres projets sur GitHub</a></p>
       </div>
     </section>
 
@@ -419,7 +496,8 @@
         <div>
           <p class="eyebrow eyebrow-light">Contact</p>
           <h2>Un poste de développeur Java à pourvoir ?</h2>
-          <p class="contact-lead">Je réponds rapidement par e-mail ou par téléphone.</p>
+          <p class="contact-lead">Disponible immédiatement pour un CDI à Nantes et alentours, en hybride. Je réponds
+            rapidement par e-mail ou par téléphone.</p>
         </div>
         <div class="contact-box">
           <div class="contact-row">

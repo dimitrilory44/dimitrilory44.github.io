@@ -180,8 +180,22 @@ h3 { font-family: var(--font-display); font-size: 1.2rem; letter-spacing: -0.01e
 .job-compact .what { background: transparent; border-style: dashed; padding-block: 0.9rem; gap: 0.2rem; }
 .company { margin: 0; color: var(--accent); font-weight: 600; font-size: 0.95rem; }
 .job-compact .company { color: var(--muted); font-weight: 500; }
-.what > ul:not(.tags) { margin: 0.2rem 0 0.3rem; padding-left: 1.1rem; display: grid; gap: 0.3rem; color: var(--muted); }
-.what > ul:not(.tags) li::marker { color: var(--accent); }
+.job-ctx { margin: 0; color: var(--muted); font-size: 0.88rem; }
+.job-compact .job-ctx { margin-top: 0.2rem; }
+
+/* Pastilles de contexte d'une mission : secteur (mis en avant), équipe, type de mission */
+.job-meta { display: flex; flex-wrap: wrap; gap: 0.4rem; list-style: none; margin: -0.1rem 0 0; padding: 0; }
+.job-meta li {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  padding: 0.22rem 0.65rem 0.22rem 0.5rem; border-radius: 999px;
+  font-size: 0.8rem; font-weight: 600; line-height: 1.3;
+  background: var(--bg-tint); color: var(--muted);
+}
+.job-meta li.m-sector { background: var(--accent-soft); color: var(--accent); }
+.job-meta svg { width: 0.95rem; height: 0.95rem; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.job-compact .job-meta { margin-top: 0.3rem; }
+.what > ul:not(.tags, .job-meta) { margin: 0.2rem 0 0.3rem; padding-left: 1.1rem; display: grid; gap: 0.3rem; color: var(--muted); }
+.what > ul:not(.tags, .job-meta) li::marker { color: var(--accent); }
 @media (max-width: 720px) {
   .timeline::before { left: 6px; }
   .job { grid-template-columns: 1fr; gap: 0.6rem; padding-left: 1.9rem; }
@@ -192,6 +206,27 @@ h3 { font-family: var(--font-display); font-size: 1.2rem; letter-spacing: -0.01e
 /* Projets */
 .projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; }
 @media (max-width: 800px) { .projects { grid-template-columns: 1fr; } }
+/* Projet mis en avant : pleine largeur, capture à gauche et texte à droite sur grand écran */
+.project-wide { grid-column: 1 / -1; }
+.project-points { margin: 0; padding-left: 1.1rem; display: grid; gap: 0.3rem; color: var(--muted); font-size: 0.95rem; }
+.project-points li::marker { color: var(--accent); }
+/* Survol (ou focus clavier) : la carte se soulève et la capture zoome doucement */
+.project.project-wide { transition: opacity 0.6s ease, transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; transition-delay: 0s; }
+.project.project-wide:hover, .project.project-wide:focus-within {
+  transform: translateY(-4px); border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+  box-shadow: 0 2px 4px rgba(20, 32, 41, 0.06), 0 22px 40px -18px rgba(20, 32, 41, 0.35);
+}
+.project-wide .mock-stream img { transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1); transform-origin: 50% 0; }
+.project-wide:hover .mock-stream img, .project-wide:focus-within .mock-stream img { transform: scale(1.04); }
+@media (prefers-reduced-motion: reduce) {
+  .project.project-wide:hover, .project.project-wide:focus-within, .project-wide:hover .mock-stream img, .project-wide:focus-within .mock-stream img { transform: none; }
+}
+.projects-more { margin: 1.4rem 0 0; text-align: center; }
+@media (min-width: 900px) {
+  .project.project-wide { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); }
+  .project-wide .mock { aspect-ratio: auto; height: 100%; min-height: 22rem; border-bottom: 0; border-right: 1px solid var(--line); }
+  .project-wide .project-body { padding: 1.8rem; }
+}
 .project { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; box-shadow: var(--shadow); min-width: 0; }
 .project-body { padding: 1.4rem; display: flex; flex-direction: column; gap: 0.7rem; flex: 1; }
 .project-body p { margin: 0; color: var(--muted); }
@@ -217,10 +252,6 @@ h3 { font-family: var(--font-display); font-size: 1.2rem; letter-spacing: -0.01e
 .mock { aspect-ratio: 16 / 8; max-width: 100%; padding: 0.9rem 1.1rem; display: grid; grid-template-rows: auto auto 1fr; gap: 0.7rem; border-bottom: 1px solid var(--line); }
 .mock-stream { background: #17202a; display: block; padding: 0; overflow: hidden;}
 .mock-stream img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top;}
-.mock-kanban { background: var(--accent-soft); grid-template-rows: auto 1fr; }
-.mock-bar { display: flex; gap: 5px; }
-.mock-bar i { width: 8px; height: 8px; border-radius: 50%; background: rgba(255, 255, 255, 0.25); }
-.mock-kanban .mock-bar i { background: color-mix(in srgb, var(--accent) 35%, transparent); }
 .mock-chips { display: flex; gap: 6px; }
 .mock-chips b { height: 10px; width: 46px; border-radius: 5px; background: rgba(255, 255, 255, 0.18); }
 .mock-chips b:first-child { background: #5cc6a6; }
@@ -228,10 +259,6 @@ h3 { font-family: var(--font-display); font-size: 1.2rem; letter-spacing: -0.01e
 .mock-posters span { aspect-ratio: 2 / 3; border-radius: 4px; background: linear-gradient(160deg, #2f4a5c, #1f2d38); }
 .mock-posters span:nth-child(3n+1) { background: linear-gradient(160deg, #5cc6a6, #1d6b58); }
 .mock-posters span:nth-child(4n+2) { background: linear-gradient(160deg, #e6a84a, #9a5b00); }
-.mock-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; align-items: start; }
-.mock-cols > div { display: grid; gap: 6px; padding: 7px; border-radius: 7px; background: color-mix(in srgb, var(--surface) 70%, transparent); }
-.mock-cols b { height: 7px; width: 55%; border-radius: 4px; background: var(--accent); opacity: 0.7; }
-.mock-cols span { height: 18px; border-radius: 4px; background: var(--surface); box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08); }
 
 /* Formation */
 .edu { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
