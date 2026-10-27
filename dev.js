@@ -27,7 +27,7 @@ const SKILLS = {
 const EXPERIENCES = [
   { from: "2025-09", to: "2026-07", company: "Kereis · Groupe Hardis", role: "Développeur Full Stack Java",
     sector: "assurance", team: 10,
-    highlights: ["Gestion des adhésions : microservices Groovy / Micronaut + écrans Angular 18", "Tests, revues de code, déploiement GitLab CI", "Run : incidents de production, extractions datalake AWS"] },
+    highlights: ["Gestion des adhésions : microservices Groovy / Micronaut + écrans Angular 18", "Tests, revues de code, déploiement GitLab CI", "Run : incidents de production, extractions datalake AWS", "GitHub Copilot (agent) : tests unitaires, documentation, revue de code — sorties relues et validées en local"] },
   { from: "2024-11", to: "2025-08", company: "Task Manager (projet entrepreneurial)", role: "Développeur Java",
     sector: "API REST", team: null,
     highlights: ["API REST sécurisée JWT + rôles", "Architecture modulaire par domaine, MapStruct", "OpenAPI, JUnit, Mockito"] },
