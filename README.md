@@ -55,7 +55,8 @@ style.css    Version classique et interrupteur de mode
 script.js    Animations, bascule de mode, retour en haut
 dev.css      Styles du mode développeur, isolés sous #dev
 dev.js       API simulée, logs de démarrage et terminal
-img/         Images du site
+img/         Images du site et image d'aperçu de partage (og-image.png)
+favicon.svg, apple-touch-icon.png   Icônes du site
 cv/          CV et dossier de compétences (PDF)
 docs/        Captures d'écran du README
 ```
