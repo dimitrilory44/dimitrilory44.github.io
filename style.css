@@ -156,7 +156,39 @@ h3 { font-family: var(--font-display); font-size: 1.2rem; letter-spacing: -0.01e
 @media (max-width: 960px) { .skills { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 520px) { .skills { grid-template-columns: 1fr; } }
 .skill-group { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.3rem; display: grid; gap: 0.9rem; align-content: start; }
-.skill-group h3 { font-size: 1.05rem; }
+.skill-group h3 { font-size: 1.05rem; display: flex; align-items: center; gap: 0.6rem; }
+.sg-icon { display: grid; place-items: center; width: 2rem; height: 2rem; border-radius: 8px; background: var(--accent-soft); color: var(--accent); flex-shrink: 0; }
+.sg-icon svg { width: 1.1rem; height: 1.1rem; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Logos des technologies, aux couleurs des marques (ajustées en sombre pour rester lisibles) */
+.tags-logo li { display: inline-flex; align-items: center; gap: 0.4rem; }
+.lg { width: 0.95rem; height: 0.95rem; flex-shrink: 0; fill: currentColor; }
+.lg-java { color: #ed8b00; }
+.lg-spring { color: #6db33f; }
+.lg-groovy { color: #4298b8; }
+.lg-hibernate { color: #59666c; }
+.lg-angular { color: #dd0031; }
+.lg-vue { color: #42b883; }
+.lg-typescript { color: #3178c6; }
+.lg-postgresql { color: #4169e1; }
+.lg-mysql { color: #4479a1; }
+.lg-docker { color: #2496ed; }
+.lg-maven { color: #c71a36; }
+.lg-jenkins { color: #d24939; }
+.lg-argo { color: #ef7b4d; }
+.lg-git { color: #f05032; }
+.lg-junit { color: #25a162; }
+.lg-vitest { color: #6e9f18; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .lg-hibernate { color: #a3b0b6; }
+  :root:not([data-theme="light"]) .lg-postgresql { color: #6f8ff0; }
+  :root:not([data-theme="light"]) .lg-mysql { color: #6f9fd0; }
+  :root:not([data-theme="light"]) .lg-maven { color: #e9506b; }
+}
+:root[data-theme="dark"] .lg-hibernate { color: #a3b0b6; }
+:root[data-theme="dark"] .lg-postgresql { color: #6f8ff0; }
+:root[data-theme="dark"] .lg-mysql { color: #6f9fd0; }
+:root[data-theme="dark"] .lg-maven { color: #e9506b; }
 .tags { display: flex; flex-wrap: wrap; gap: 0.45rem; list-style: none; margin: 0; padding: 0; }
 .tags li { font-size: 0.87rem; font-weight: 500; padding: 0.3rem 0.65rem; border-radius: 7px; background: var(--bg-tint); color: var(--ink); }
 .skill-group .tags li { background: var(--bg); }
